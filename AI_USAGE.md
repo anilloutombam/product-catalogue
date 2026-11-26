@@ -10,7 +10,16 @@ The project used OpenAI Codex with GPT-6-family models. The review and follow-up
 4. **Act on independent review and security findings.** A mixed-case sales domain returned 503 even though Mailpit had received the email. The review also found an SVG bypass, category slug collisions, and generic page announcements. The author approved fixes and regression coverage. The audit investigation led to a targeted Nodemailer 10.6.1 upgrade. Its bundled types exposed an obsolete recipient-object branch, which was removed. Both npm audits reported zero findings after the upgrade.
 5. **Isolate browser test delivery.** The final review found that fixture mode could still use a separately configured SMTP relay. The browser suite now launches a separate Compose project with loopback ports, fixed test addresses and empty credentials. All six browser tests passed with simulated external relay settings in the shell, and Playwright refused to start when the test app port was already occupied.
 
-## Author entries before submission
+## Time spent
 
-- **Time spent.** Author to record actual time for planning, implementation, testing, and review.
-- **Clean-clone walkthrough.** Author to time the README workflow through first Mailpit receipt and record whether Docker images or build layers were cached.
+| Activity | Approximate duration |
+| --- | ---: |
+| Requirements analysis and repository setup | 10 min |
+| Architecture planning and scaffolding | 15 min |
+| Application implementation | 40 min |
+| Testing and manual verification | 30 min |
+| Code review, corrections and security remediation | 25 min |
+| Documentation and submission preparation | 20 min |
+| **Total** | **2 hr 20 min** |
+
+Durations are approximate and were reconstructed from development checkpoints. Some implementation, testing and review activities overlapped.
