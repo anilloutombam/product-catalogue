@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    environment:
+      CATALOGUE_SOURCE: fixture
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_SECURE: "false"
+      SMTP_USER: ""
+      SMTP_PASS: ""
+      MAIL_FROM: catalogue-e2e@example.test
+      SALES_EMAIL: Sales-E2E@EXAMPLE.TEST
+    ports:
+      - "127.0.0.1:3100:3000"
+    depends_on:
+      mailpit:
+        condition: service_healthy
+  mailpit:
+    image: axllent/mailpit:v1.27.4
+    ports:
+      - "127.0.0.1:8125:8025"
