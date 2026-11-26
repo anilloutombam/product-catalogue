@@ -77,6 +77,14 @@ web_modules/
 # Next.js build output
 .next
 out
+next-env.d.ts
+
+# Playwright reports and local test output
+/playwright-report/
+/test-results/
+
+# Supplied assignment brief
+Code Challenge - AI-Native Engineer*.pdf
 
 # Nuxt.js build / generate output
 .nuxt
